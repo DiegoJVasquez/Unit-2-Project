@@ -2,8 +2,8 @@ const request = require('supertest')
 const mongoose = require('mongoose')
 const {MongoMemoryServer}= require('mongodb-memory-server')
 const app = require ('../app')
-const server = app.listen(8080, () => console.log("TESTINNGGG ON 8080"))
-const Blog = require ('../models/todo')
+const server = app.listen(8081, () => console.log("TESTINNGGG ON 8081"))
+const Blog = require ('../models/blog')
 let mongoServer 
 
 beforeAll(async () => {
@@ -12,7 +12,7 @@ beforeAll(async () => {
 })
 
 afterEach(async () => {
-    await Todo.deleteMany() // deletes everything from mongo memery server after each tests
+    await Blog.deleteMany() // deletes everything from mongo memery server after each tests
 })
 
 afterAll(async () => {
@@ -21,19 +21,19 @@ afterAll(async () => {
     server.close() //stops server
 })
 
-describe('testing all of the todo endpoints',() => {
-   test('should create a new todo', async () => {
+describe('testing all of the blog endpoints',() => {
+   test('should create a new blog', async () => {
     const response = await request (app).post('/blogs').send() //
    })
 })
 
 test('should get a specific blog by id', async () => {
-    const toDo = new Todo({
-        title: 'clean room',
-        description: 'clean your room'
+    const blog = new Blog({
+        title: 'Do homework',
+        description: 'finish your homework'
     }) 
-    await toDo.save()
+    await blog.save()
 
-    const response = await request(app).get(`/blogs/${toDo._id}`)
+    const response = await request(app).get(`/blogs/${blog._id}`)
     expect(response.statusCode).toBe(200)
 })
