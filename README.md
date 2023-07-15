@@ -6,7 +6,7 @@ Prerequisites:
 
 Nodemon
 Node.js
-MongoDB Atlas Database (optional)
+MongoDB Atlas Database 
 Open the terminal and run npm install -g nodemon
 Getting Started:
 
@@ -18,7 +18,7 @@ In the .env file, define variables for the MongoDB connection string and a SECRE
 Blog API:
 
 To start the API, run the command npm run dev, which will run on http://localhost:3000.
-In the terminal, you should see the message "We really doing it 3000," indicating that the app is connected, and "Mongo be workin," indicating that the MongoDB database is connected.
+In the terminal, you should see the message "This demon is finally working in port 3000," indicating that the app is connected, and "Mongo freakin loves uss," indicating that the MongoDB database is connected.
 API Requests in Postman:
 
 Open the Postman app and ensure that your server is still running at http://localhost:3000.
@@ -29,8 +29,5 @@ Enter the required information in JSON object format.
 Click "Send" to make the request.
 Testing with Jest & Supertest:
 
-Ensure that your app is not running by executing pkill node.
-To test the userRoute, run the command npm run testUser.
-To test the postRoute, run the command npm run testPost.
-To test both routes, run npm run test.
-Note: It's essential to have a good understanding of the project structure, code implementation, and available routes and endpoints to execute the API requests correctly. Make sure to replace placeholders like MONGODB connection string and SECRET with hashed SHA password with appropriate values.
+Below I Have linked my Trello associated with this project
+https://trello.com/b/NOmCFccP/blog-api

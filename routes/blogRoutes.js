@@ -5,7 +5,7 @@ const userController = require('../controllers/userController')
 
 router.get('/', userController.auth, blogController.getAllBlogs) //show all blogs
 router.post('/',userController.auth, blogController.createBlog) // create blog
-router.get('/:id', userController.auth, blogController.getBlog ) // get specfic blog 
+router.get('/:id', userController.auth, blogController.getABlog ) // get specfic blog 
 router.put('/:id', userController.auth, blogController.updateBlog) // update blog 
 router.delete('/:id', userController.auth, blogController.deleteBlog) // delete blog
 
